@@ -1,0 +1,22 @@
+Rotate Array
+
+class Solution {
+    static void rotateArr(int arr[], int d) {
+        
+        d %= arr.length;
+        int n = arr.length;
+        
+        reverseNum(arr,0,d-1);
+        reverseNum(arr,d,n-1);
+        reverseNum(arr,0,n-1);
+    }
+    static void reverseNum(int[]arr, int start, int end){
+        while(start<end){
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
