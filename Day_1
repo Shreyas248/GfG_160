@@ -1,0 +1,14 @@
+Second Largest Array
+
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        int size = arr.length;
+        Arrays.sort(arr);
+        
+        for(int i= size - 2; i>=0; i--){
+            if(arr[i] != arr[size-1])
+                return arr[i];
+        }
+        return - 1;
+    }
+}
